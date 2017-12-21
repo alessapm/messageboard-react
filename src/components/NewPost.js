@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PostBtnContainer from './PostBtnContainer';
 
 export default class NewPost extends Component {
   constructor(props){
@@ -23,26 +24,30 @@ export default class NewPost extends Component {
 
   render(){
     return(
-      <div className="post">
+      <div className="new-post">
+        <h1>Create a new post</h1>
         <div className="form-content">
           <label>Post Title: </label><br/>
           <input name="title"
           onChange={this.handleChange.bind(this)}
           type='text'
-          placeholder="Enter a title for your post" />
+          />
           <br /><br />
           <label>Message: </label><br/>
           <input name="message"
+          id="message-input"
           onChange={this.handleChange.bind(this)}
           type='text'
-          placeholder="Enter post message" />
+          />
           <br /><br />
+          <label>User: </label><br/>
           <input name="user"
           onChange={this.handleChange.bind(this)}
           type='text'
-          placeholder="Enter Username for post" />
+          />
           <br /><br />
         </div>
+        <PostBtnContainer newPost={true} />
       </div>
     )
   }

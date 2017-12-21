@@ -15,6 +15,16 @@ header {
   height: 200px;
   background-color: #B9C8C8; }
 
+label {
+  font-size: 1.5em; }
+
+input {
+  width: 100%;
+  border-radius: 5px;
+  height: 30px;
+  border: 2px solid #2C4921;
+  padding-left: 5px; }
+
 .App {
   text-align: center;
   font-family: "Lato", sans-serif;
@@ -29,6 +39,16 @@ header {
 
 .fa-caret-right {
   font-size: 4em; }
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; }
+
+.new-post {
+  width: 80%;
+  margin: 0 auto; }
 
 .post {
   display: flex;
@@ -69,5 +89,8 @@ header {
 
 .post-container {
   margin-top: 50px; }
+
+#message-input {
+  height: 130px; }
 
 /*# sourceMappingURL=App.css.map */

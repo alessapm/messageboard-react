@@ -53,9 +53,6 @@ showNewPostForm(){
     } else {
       return (
         <div className="App">
-          <header>
-            <h1>The Fairygodboss Message Board</h1>
-          </header>
           <div className="main-container">
             <NewPost />
           </div>
