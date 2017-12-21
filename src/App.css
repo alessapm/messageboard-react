@@ -1,4 +1,18 @@
 .App {
-  text-align: center; }
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  color: #3E4B6C;
+  border: 2px solid #B4C4AE;
+  height: calc(100vh - 60px);
+  margin: 30px;
+  padding: 2px; }
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #B9C8C8; }
 
 /*# sourceMappingURL=App.css.map */
