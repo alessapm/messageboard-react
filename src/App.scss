@@ -1,7 +1,8 @@
 $font-stack: 'Lato', sans-serif;
-$primary-color: #3E4B6C;
+$primary-color: #0B2A76;
 $secondary-color: #B9C8C8;
-$accent-color: #B4C4AE;
+$accent-color: #2C4921;
+$border: 2px solid $accent-color;
 
 @mixin flex-options($direction, $justify, $align) {
   display: flex;
@@ -10,14 +11,14 @@ $accent-color: #B4C4AE;
   align-items: $align;
 }
 
-.App {
-  text-align: center;
-  font-family: $font-stack;
+button {
+  width: 150px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: $secondary-color;
   color: $primary-color;
-  border: 2px solid $accent-color;
-  height: calc(100vh - 60px);
-  margin: 30px;
-  padding: 2px;
+  border: 2px $secondary-color outset;
+  cursor: pointer;
 }
 
 header {
@@ -25,4 +26,61 @@ header {
   height: 200px;
   background-color: $secondary-color;
 }
+
+.App {
+  text-align: center;
+  font-family: $font-stack;
+  color: $primary-color;
+  border: $border;
+  min-height: calc(100vh - 60px);
+  margin: 30px;
+  padding: 2px;
+}
+
+.comments {
+  text-decoration: underline;
+}
+
+.fa-caret-right {
+  font-size: 4em;
+}
+
+.post {
+  @include flex-options(row, space-between, center);
+  margin: 5px 10px;
+  padding: 0px 10px;
+  border: $border;
+  // width: 100%;
+}
+
+.poster-and-comments {
+  @include flex-options(row, flex-start, center);
+  width: 50%;
+
+  p {
+    padding-right: 50px;
+  }
+}
+
+.post-content {
+  width: 90%;
+}
+
+.post-details {
+   @include flex-options(row, space-between, center);
+}
+
+.post-btn-container {
+  @include flex-options(row, flex-end, center);
+  height: 200px;
+}
+
+.post-btn-container {
+  padding-right: 10px;
+}
+
+.post-container {
+  margin-top: 50px;
+}
+
 

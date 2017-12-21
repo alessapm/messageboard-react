@@ -1,11 +1,11 @@
-.App {
-  text-align: center;
-  font-family: "Lato", sans-serif;
-  color: #3E4B6C;
-  border: 2px solid #B4C4AE;
-  height: calc(100vh - 60px);
-  margin: 30px;
-  padding: 2px; }
+button {
+  width: 150px;
+  height: 40px;
+  border-radius: 3px;
+  background-color: #B9C8C8;
+  color: #0B2A76;
+  border: 2px #B9C8C8 outset;
+  cursor: pointer; }
 
 header {
   display: flex;
@@ -14,5 +14,60 @@ header {
   align-items: center;
   height: 200px;
   background-color: #B9C8C8; }
+
+.App {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  color: #0B2A76;
+  border: 2px solid #2C4921;
+  min-height: calc(100vh - 60px);
+  margin: 30px;
+  padding: 2px; }
+
+.comments {
+  text-decoration: underline; }
+
+.fa-caret-right {
+  font-size: 4em; }
+
+.post {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 10px;
+  padding: 0px 10px;
+  border: 2px solid #2C4921; }
+
+.poster-and-comments {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 50%; }
+  .poster-and-comments p {
+    padding-right: 50px; }
+
+.post-content {
+  width: 90%; }
+
+.post-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+
+.post-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  height: 200px; }
+
+.post-btn-container {
+  padding-right: 10px; }
+
+.post-container {
+  margin-top: 50px; }
 
 /*# sourceMappingURL=App.css.map */
