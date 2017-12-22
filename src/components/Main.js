@@ -19,13 +19,14 @@ export default class Main extends Component {
         },
         {
           title: 'Second Post has a really long post title that is this',
-          message: 'this is my SECOND post. This is sto;;;; still what a post looks like. ',
+          message: 'this is my SECOND post. This is sto;;;; still what a post looks like. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo ipsum magni veniam minus autem dicta totam praesentium rem ullam! Delectus veniam repellat numquam rerum id quod, quisquam, illo quas exercitationem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias odit consequatur at pariatur eius deserunt amet adipisci, quibusdam expedita, autem velit repellat doloremque ut consectetur sed officiis, debitis dicta ea!',
           user: 'User122',
           date: '12/21/17 @ 9:11am',
           comments: []
         }
       ],
-      isNewPostActive: false
+      isNewPostActive: false,
+      fullPostActive: false
     }
   }
 
@@ -44,18 +45,35 @@ showNewPostForm(){
   this.setState({isNewPostActive: !createNewShowing});
 }
 
+showFullPost(){
+  let activePost = JSON.parse(localStorage.getItem('activePost'));
+  if (this.state.fullPostActive && this.state.fullPostActive.title){
+    this.setState({fullPostActive: null})
+  } else {
+    this.setState({fullPostActive: activePost})
+  }
+}
+
 
   render() {
+    if(this.state.fullPostActive){
+      return(
+        <div className="main">
+          <div className="main-container">
+            <PostContainer posts={this.state.posts} fullPostActive={this.state.fullPostActive} showFullPost={this.showFullPost.bind(this)} />
+          </div>
+        </div>
+      )
+    }
     if (!this.state.isNewPostActive){
       return (
 
           <div className="main">
-
             <header>
               <h1>The Fairygodboss Message Board</h1>
             </header>
             <div className="main-container">
-              <PostContainer posts={this.state.posts} />
+              <PostContainer posts={this.state.posts} fullPostActive={this.state.fullPostActive} showFullPost={this.showFullPost.bind(this)}/>
               <PostBtnContainer showNewPostForm={this.showNewPostForm.bind(this)} />
             </div>
           </div>
@@ -63,7 +81,6 @@ showNewPostForm(){
       );
     } else {
       return (
-
           <div className="main">
             <div className="main-container">
               <NewPost createPost={this.createPost.bind(this)} showNewPostForm={this.showNewPostForm.bind(this)}/>

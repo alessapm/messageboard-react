@@ -3,6 +3,7 @@ $primary-color: #0B2A76;
 $secondary-color: #B9C8C8;
 $accent-color: #2C4921;
 $border: 2px solid $accent-color;
+$standard-spacing: 20px;
 
 @mixin flex-options($direction, $justify, $align) {
   display: flex;
@@ -22,6 +23,7 @@ button {
   background-color: $secondary-color;
   color: $primary-color;
   border: 2px $secondary-color outset;
+  font-size: 1em;
   cursor: pointer;
 }
 
@@ -43,17 +45,8 @@ input, textarea {
   padding-left: 5px;
 }
 
-
-
-.main {
-  text-align: center;
-  font-family: $font-stack;
-  color: $primary-color;
-  border: $border;
-  min-height: calc(100vh - 60px);
-  margin: 30px;
-  padding: 2px;
-
+.arrow {
+  cursor: pointer;
 }
 
 .comments {
@@ -66,6 +59,35 @@ input, textarea {
 
 .form-content {
   @include flex-options(column, center, flex-start)
+}
+
+.full-content {
+  @include flex-options(column, center, center);
+  min-height: 33vh;
+  border-bottom: 2px dashed $secondary-color;
+}
+
+.full-details {
+  @include flex-options(row, space-between, center);
+  width: 100%;
+}
+
+.full-post {
+  padding: $standard-spacing;
+
+  p {
+    text-align: left;
+  }
+}
+
+.main {
+  text-align: center;
+  font-family: $font-stack;
+  color: $primary-color;
+  border: $border;
+  min-height: calc(100vh - 60px);
+  margin: $standard-spacing;
+  padding: 2px;
 }
 
 .new-post {
@@ -86,7 +108,7 @@ input, textarea {
   width: 50%;
 
   p {
-    padding-right: 50px;
+    padding-right: $standard-spacing;
   }
 }
 
@@ -111,8 +133,16 @@ input, textarea {
   margin-top: 50px;
 }
 
+.title-user {
+  text-align: left;
+
+  h1, h2 {
+    margin: 5px;
+  }
+}
+
 #cancel {
-  margin-right: 20px;
+  margin-right: $standard-spacing;
 }
 
 #message-input {

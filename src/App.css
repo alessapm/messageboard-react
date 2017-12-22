@@ -8,6 +8,7 @@ button {
   background-color: #B9C8C8;
   color: #0B2A76;
   border: 2px #B9C8C8 outset;
+  font-size: 1em;
   cursor: pointer; }
 
 header {
@@ -28,14 +29,8 @@ input, textarea {
   border: 2px solid #2C4921;
   padding-left: 5px; }
 
-.main {
-  text-align: center;
-  font-family: "Lato", sans-serif;
-  color: #0B2A76;
-  border: 2px solid #2C4921;
-  min-height: calc(100vh - 60px);
-  margin: 30px;
-  padding: 2px; }
+.arrow {
+  cursor: pointer; }
 
 .comments {
   text-decoration: underline; }
@@ -48,6 +43,35 @@ input, textarea {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start; }
+
+.full-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 33vh;
+  border-bottom: 2px dashed #B9C8C8; }
+
+.full-details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; }
+
+.full-post {
+  padding: 20px; }
+  .full-post p {
+    text-align: left; }
+
+.main {
+  text-align: center;
+  font-family: "Lato", sans-serif;
+  color: #0B2A76;
+  border: 2px solid #2C4921;
+  min-height: calc(100vh - 60px);
+  margin: 20px;
+  padding: 2px; }
 
 .new-post {
   width: 80%;
@@ -69,7 +93,7 @@ input, textarea {
   align-items: center;
   width: 50%; }
   .poster-and-comments p {
-    padding-right: 50px; }
+    padding-right: 20px; }
 
 .post-content {
   width: 90%; }
@@ -92,6 +116,11 @@ input, textarea {
 
 .post-container {
   margin-top: 50px; }
+
+.title-user {
+  text-align: left; }
+  .title-user h1, .title-user h2 {
+    margin: 5px; }
 
 #cancel {
   margin-right: 20px; }

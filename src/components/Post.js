@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class PostPreview extends Component {
+export default class Post extends Component {
   constructor(){
     super();
 
@@ -15,13 +15,13 @@ export default class PostPreview extends Component {
   //   comments: []
   // }
 
-  // componentDidMount(){
-  //   this.setState({post: this.props.post})
-  // }
+  componentDidMount(){
+    // this.setState({post: this.props.post})
+    localStorage.setItem('activePost', JSON.stringify(this.props.post))
+  }
 
   render(){
     const post = this.props.post;
-
     if (post){
       return(
         <div className="post">
@@ -37,11 +37,10 @@ export default class PostPreview extends Component {
               </div>
             </div>
           </div>
-          <div className="arrow"><i className="fa fa-caret-right" aria-hidden="true"></i></div>
+          <div className="arrow" onClick={() => this.props.showFullPost()}><i className="fa fa-caret-right" aria-hidden="true"></i></div>
         </div>
       )
     }
-
     else {
       return(
         <div className="post">
