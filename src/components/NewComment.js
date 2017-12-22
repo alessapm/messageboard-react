@@ -32,25 +32,24 @@ handleChange(event){
   }
 
 
-
 render(){
     return(
       <div className="new-comment">
         <div className="comment-inputs">
           <label>Reply Message: </label><br/>
-          <textarea name="comment-msg"
+          <textarea name="comment_msg"
           id="comment-input"
           onChange={this.handleChange.bind(this)}
           type='text'
           />
           <br /><br />
           <label>Reply User: </label><br/>
-          <input name="comment-user"
+          <input name="comment_user"
           onChange={this.handleChange.bind(this)}
           type='text'
           />
         </div>
-        <button id="reply-btn" onClick={this.handleSubmit()}>Post Reply</button>
+        <button id="reply-btn" onClick={() => this.handleSubmit()}>Post Reply</button>
       </div>
     )
   }

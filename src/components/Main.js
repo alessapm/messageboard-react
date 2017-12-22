@@ -18,6 +18,10 @@ export default class Main extends Component {
           comments: [{
             comment_user: 'am111',
             comment_msg: 'this is a comment. I disagree!'
+          },
+          {
+            comment_user: 'DD431',
+            comment_msg: 'this is an ANGRY comment. I disagree! Because Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nulla quia tenetur, culpa ducimus cumque vel quidem, deserunt mollitia odit facere, sed quaerat inventore saepe perferendis. Velit quo nesciunt consectetur.'
           }]
         },
         {
