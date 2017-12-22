@@ -17,7 +17,9 @@ header {
   justify-content: center;
   align-items: center;
   height: 200px;
-  background-color: #B9C8C8; }
+  background-image: url("./img/Group4.png");
+  background-position: center;
+  background-size: cover; }
 
 label {
   font-size: 1.5em; }

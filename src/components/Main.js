@@ -72,10 +72,10 @@ newComment(){
   let isolatedPostComments = stateCopy[index].comments
   let addComment = isolatedPostComments.push(comment)
 
-  console.log('iso: ', isolatedPostComments);
-  stateCopy[index].comments = isolatePost;
-  console.log('stateCopy: ', stateCopy)
-
+  // console.log('iso: ', isolatedPostComments);
+  stateCopy[index].comments = isolatedPostComments;
+  // console.log('stateCopy: ', stateCopy)
+  this.setState({posts: stateCopy})
 }
 
 

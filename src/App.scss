@@ -30,7 +30,9 @@ button {
 header {
   @include flex-options(row, center, center);
   height: 200px;
-  background-color: $secondary-color;
+  background-image: url('./img/Group4.png');
+  background-position: center;
+  background-size: cover;
 }
 
 label {
