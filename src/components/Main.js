@@ -15,7 +15,10 @@ export default class Main extends Component {
           message: 'this is my first post. This is what a post looks like. ',
           user: 'User101',
           date: '12/21/17 @ 8:11am',
-          comments: []
+          comments: [{
+            comment_user: 'am111',
+            comment_msg: 'this is a comment. I disagree!'
+          }]
         },
         {
           title: 'Second Post has a really long post title that is this',
@@ -33,7 +36,7 @@ export default class Main extends Component {
 createPost(){
   let newPost = JSON.parse(localStorage.getItem('newPost'));
   let currentPosts = this.state.posts;
-  let updatedPosts = currentPosts.push(newPost.post);
+  currentPosts.push(newPost.post);
 
   this.setState({
     isNewPostActive: false
@@ -47,8 +50,9 @@ showNewPostForm(){
 
 showFullPost(){
   let activePost = JSON.parse(localStorage.getItem('activePost'));
-  if (this.state.fullPostActive && this.state.fullPostActive.title){
-    this.setState({fullPostActive: null})
+  if (this.state.fullPostActive){
+    this.setState({fullPostActive: ''});
+    localStorage.removeItem('activePost');
   } else {
     this.setState({fullPostActive: activePost})
   }

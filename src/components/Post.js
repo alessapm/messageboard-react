@@ -15,9 +15,9 @@ export default class Post extends Component {
   //   comments: []
   // }
 
-  componentDidMount(){
-    // this.setState({post: this.props.post})
-    localStorage.setItem('activePost', JSON.stringify(this.props.post))
+  activateFullPost(){
+     localStorage.setItem('activePost', JSON.stringify(this.props.post));
+     this.props.showFullPost();
   }
 
   render(){
@@ -37,7 +37,7 @@ export default class Post extends Component {
               </div>
             </div>
           </div>
-          <div className="arrow" onClick={() => this.props.showFullPost()}><i className="fa fa-caret-right" aria-hidden="true"></i></div>
+          <div className="arrow" onClick={() => this.activateFullPost()}><i className="fa fa-caret-right" aria-hidden="true"></i></div>
         </div>
       )
     }
