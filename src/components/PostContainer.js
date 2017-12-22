@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Post from './Post';
+import PostPreview from './PostPreview';
 
 export default class PostContainer extends Component {
   // constructor(props){
@@ -9,7 +9,7 @@ export default class PostContainer extends Component {
   render(){
     const posts = this.props.posts.map((post, index) => {
         return (
-          <Post post={post} key={index} />
+          <PostPreview post={post} key={index} />
         )
       })
 
