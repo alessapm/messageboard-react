@@ -1,7 +1,7 @@
 $font-stack: 'Lato', sans-serif;
 $primary-color: #0B2A76;
 $secondary-color: #B9C8C8;
-$accent-color: #2C4921;
+$accent-color: #A2B19C;
 $border: 2px solid $accent-color;
 $standard-spacing: 20px;
 
@@ -49,26 +49,55 @@ input, textarea {
   cursor: pointer;
 }
 
+
+.comment {
+  margin: $standard-spacing;
+  padding-bottom: 5px;
+  border-bottom: 2px dashed $secondary-color;
+  p, h4 {
+    margin: 5px;
+  }
+}
+
+.comment-inputs {
+  padding: $standard-spacing;
+  flex: 3;
+  margin-right: $standard-spacing;
+}
+
 .comments {
   text-decoration: underline;
 }
+
 
 .fa-caret-right {
   font-size: 4em;
 }
 
 .form-content {
-  @include flex-options(column, center, flex-start)
+  @include flex-options(column, center, flex-start);
+
+  p {
+    text-align: left;
+  }
+}
+
+.full-comments {
+  text-align: left;
 }
 
 .full-content {
-  @include flex-options(column, center, center);
+  @include flex-options(column, flex-start, center);
   min-height: 33vh;
   border-bottom: 2px dashed $secondary-color;
 }
 
 .full-details {
   @include flex-options(row, space-between, center);
+  width: 100%;
+}
+
+.full-message {
   width: 100%;
 }
 
@@ -95,8 +124,12 @@ input, textarea {
   margin: 0 auto;
 }
 
-.post {
+.new-comment {
   @include flex-options(row, space-between, center);
+}
+
+.post {
+  @extend .new-comment;
   margin: 5px 10px;
   padding: 0px 10px;
   border: $border;
@@ -145,8 +178,12 @@ input, textarea {
   margin-right: $standard-spacing;
 }
 
-#message-input {
+#message-input, #comment-input{
   height: 130px;
 }
 
+#reply-btn {
+  width: 200px;
+  margin-right: $standard-spacing;
+}
 

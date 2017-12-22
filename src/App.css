@@ -26,11 +26,23 @@ input, textarea {
   width: 100%;
   border-radius: 5px;
   height: 30px;
-  border: 2px solid #2C4921;
+  border: 2px solid #A2B19C;
   padding-left: 5px; }
 
 .arrow {
   cursor: pointer; }
+
+.comment {
+  margin: 20px;
+  padding-bottom: 5px;
+  border-bottom: 2px dashed #B9C8C8; }
+  .comment p, .comment h4 {
+    margin: 5px; }
+
+.comment-inputs {
+  padding: 20px;
+  flex: 3;
+  margin-right: 20px; }
 
 .comments {
   text-decoration: underline; }
@@ -43,11 +55,16 @@ input, textarea {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start; }
+  .form-content p {
+    text-align: left; }
+
+.full-comments {
+  text-align: left; }
 
 .full-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   min-height: 33vh;
   border-bottom: 2px dashed #B9C8C8; }
@@ -59,6 +76,9 @@ input, textarea {
   align-items: center;
   width: 100%; }
 
+.full-message {
+  width: 100%; }
+
 .full-post {
   padding: 20px; }
   .full-post p {
@@ -68,7 +88,7 @@ input, textarea {
   text-align: center;
   font-family: "Lato", sans-serif;
   color: #0B2A76;
-  border: 2px solid #2C4921;
+  border: 2px solid #A2B19C;
   min-height: calc(100vh - 60px);
   margin: 20px;
   padding: 2px; }
@@ -77,14 +97,16 @@ input, textarea {
   width: 80%;
   margin: 0 auto; }
 
-.post {
+.new-comment, .post {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; }
+
+.post {
   margin: 5px 10px;
   padding: 0px 10px;
-  border: 2px solid #2C4921; }
+  border: 2px solid #A2B19C; }
 
 .poster-and-comments {
   display: flex;
@@ -125,7 +147,11 @@ input, textarea {
 #cancel {
   margin-right: 20px; }
 
-#message-input {
+#message-input, #comment-input {
   height: 130px; }
+
+#reply-btn {
+  width: 200px;
+  margin-right: 20px; }
 
 /*# sourceMappingURL=App.css.map */
