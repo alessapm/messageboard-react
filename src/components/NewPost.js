@@ -1,25 +1,58 @@
 import React, { Component } from 'react';
+import update from 'react-addons-update';
 import PostBtnContainer from './PostBtnContainer';
+
 
 export default class NewPost extends Component {
   constructor(props){
     super(props);
 
     this.state ={
-      title: '',
-      message: '',
-      user: '',
-      date: '',
-      comments: []
+      post: {
+        title: '',
+        message: '',
+        user: '',
+        date: '',
+        comments: []
+      }
     }
   }
 
   handleChange(event){
-    // this.setState({event.target.name: event.target.value})
+    let newState = update(this.state, {
+      post: {
+        $merge: {
+          [event.target.name]: event.target.value
+        }
+      }
+    });
+
+    this.setState(newState);
   }
 
   handleSubmit(){
+    const date = new Date();
+    const month = date.getMonth()+1;
+    const day = date.getDate();
+    const year = date.getYear() - 100;
+    const hours = date.getHours() < 13 ? date.getHours() : date.getHours() - 12;
+    const minutes = date.getMinutes();
+    const meridian = date.getHours() < 13 ? 'am' : 'pm';
 
+    const timestamp =`${month}/${day}/${year} @ ${hours}:${minutes}${meridian}`;
+
+    let newState = update(this.state, {
+      post: {
+        $merge: {
+          date: timestamp
+        }
+      }
+    });
+
+    this.setState(newState, () => {
+       localStorage.setItem('newPost', JSON.stringify(this.state));
+      this.props.createPost()
+    });
   }
 
   render(){
@@ -34,7 +67,7 @@ export default class NewPost extends Component {
           />
           <br /><br />
           <label>Message: </label><br/>
-          <input name="message"
+          <textarea name="message"
           id="message-input"
           onChange={this.handleChange.bind(this)}
           type='text'
@@ -47,7 +80,7 @@ export default class NewPost extends Component {
           />
           <br /><br />
         </div>
-        <PostBtnContainer newPost={true} />
+        <PostBtnContainer newPost={true} submit={this.handleSubmit.bind(this)} showNewPostForm={this.props.showNewPostForm}/>
       </div>
     )
   }

@@ -1,3 +1,6 @@
+* {
+  outline: none; }
+
 button {
   width: 150px;
   height: 40px;
@@ -18,14 +21,14 @@ header {
 label {
   font-size: 1.5em; }
 
-input {
+input, textarea {
   width: 100%;
   border-radius: 5px;
   height: 30px;
   border: 2px solid #2C4921;
   padding-left: 5px; }
 
-.App {
+.main {
   text-align: center;
   font-family: "Lato", sans-serif;
   color: #0B2A76;
@@ -89,6 +92,9 @@ input {
 
 .post-container {
   margin-top: 50px; }
+
+#cancel {
+  margin-right: 20px; }
 
 #message-input {
   height: 130px; }

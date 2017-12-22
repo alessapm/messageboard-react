@@ -9,14 +9,14 @@ export default class PostBtnContainer extends Component {
     if (this.props.newPost){
       return(
         <div className="post-btn-container">
-          <CancelBtn />
-          <CreateBtn />
+          <CancelBtn showNewPostForm={this.props.showNewPostForm}/>
+          <CreateBtn submit={this.props.submit}/>
         </div>
       )
     } else {
       return(
         <div className="post-btn-container">
-          <PostBtn showNew={this.props.showNew} />
+          <PostBtn showNewPostForm={this.props.showNewPostForm} />
         </div>
       )
     }

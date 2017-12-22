@@ -4,7 +4,7 @@ export default class PostBtnContainer extends Component {
 
   render(){
     return(
-      <button onClick={this.props.showNew}>Create New Post</button>
+      <button onClick={this.props.showNewPostForm}>Create New Post</button>
     )
   }
 }
