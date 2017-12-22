@@ -15,8 +15,12 @@ export default class Post extends Component {
   //   comments: []
   // }
 
+  componentDidMount(){
+    this.setState({post: this.props.post, index: this.props.index})
+  }
+
   activateFullPost(){
-     localStorage.setItem('activePost', JSON.stringify(this.props.post));
+     localStorage.setItem('activePost', JSON.stringify(this.state));
      this.props.showFullPost();
   }
 

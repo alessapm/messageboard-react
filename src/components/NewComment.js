@@ -9,10 +9,13 @@ export default class NewComment extends Component {
     this.state = {
       comment: {
         comment_user: '',
-        comment_msg: ''
-      }
+        comment_msg: '',
+      },
+      index: ''
     }
   }
+
+
 
 handleChange(event){
     let newState = update(this.state, {
@@ -27,8 +30,10 @@ handleChange(event){
   }
 
   handleSubmit(){
-    localStorage.setItem('newComment', JSON.stringify(this.state));
-    console.log('handleSubmit');
+    this.setState({index: this.props.index}, () => {
+      localStorage.setItem('newComment', JSON.stringify(this.state));
+      this.props.newComment();
+    })
   }
 
 

@@ -62,13 +62,29 @@ showFullPost(){
   }
 }
 
+newComment(){
+  let getLocal = JSON.parse(localStorage.getItem('newComment'));
+  let index = getLocal.index;
+  let comment = getLocal.comment;
+
+  let stateCopy = [ ... this.state.posts];
+
+  let isolatedPostComments = stateCopy[index].comments
+  let addComment = isolatedPostComments.push(comment)
+
+  console.log('iso: ', isolatedPostComments);
+  stateCopy[index].comments = isolatePost;
+  console.log('stateCopy: ', stateCopy)
+
+}
+
 
   render() {
     if(this.state.fullPostActive){
       return(
         <div className="main">
           <div className="main-container">
-            <PostContainer posts={this.state.posts} fullPostActive={this.state.fullPostActive} showFullPost={this.showFullPost.bind(this)} />
+            <PostContainer posts={this.state.posts} fullPostActive={this.state.fullPostActive} showFullPost={this.showFullPost.bind(this)} newComment={this.newComment.bind(this)}/>
           </div>
         </div>
       )

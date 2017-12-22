@@ -11,11 +11,11 @@ export default class PostContainer extends Component {
   render(){
     const posts = this.props.posts.map((post, index) => {
         return (
-          <Post post={post} key={index} showFullPost={this.props.showFullPost} />
+          <Post post={post} key={index} index={index} showFullPost={this.props.showFullPost} />
         )
       })
 
-    const fullPostActive = this.props.fullPostActive;
+    const fullPostActive = this.props.fullPostActive.post;
 
     if (fullPostActive){
       return(
@@ -36,8 +36,8 @@ export default class PostContainer extends Component {
           </div>
           <div className="full-comments">
             <h3>Responses</h3>
-            <CommentContainer comments={fullPostActive.comments}/>
-            <NewComment />
+            <CommentContainer comments={fullPostActive.comments} newComment={this.props.newComment}/>
+            <NewComment newComment={this.props.newComment} index={this.props.fullPostActive.index}/>
           </div>
         </div>
       )
