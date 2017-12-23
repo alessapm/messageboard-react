@@ -62,20 +62,20 @@ export default class NewPost extends Component {
       <div className="new-post">
         <h1>Create a new post</h1>
         <div className="form-content">
-          <label>Post Title: </label><br/>
+          <label>Post Title</label><br/>
           <input name="title"
           onChange={this.handleChange.bind(this)}
           type='text'
           />
           <br /><br />
-          <label>Message: </label><br/>
+          <label>Message</label><br/>
           <textarea name="message"
           id="message-input"
           onChange={this.handleChange.bind(this)}
           type='text'
           />
           <br /><br />
-          <label>User: </label><br/>
+          <label>User</label><br/>
           <input name="user"
           onChange={this.handleChange.bind(this)}
           type='text'

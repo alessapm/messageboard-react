@@ -4,16 +4,13 @@ $secondary-color: #B9C8C8;
 $accent-color: #A2B19C;
 $border: 2px solid $accent-color;
 $standard-spacing: 20px;
+$mobile-break: 768px;
 
 @mixin flex-options($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
-}
-
-@keyframes load {
-    0% {transform:rotateZ(-360deg);}
 }
 
 
@@ -35,9 +32,19 @@ button {
 header {
   @include flex-options(row, center, center);
   height: 200px;
-  background-image: url('./img/Group4.png');
+  background-image: url('./img/Group7.png');
   background-position: center;
   background-size: cover;
+  h1 {
+    text-shadow: 2px 2px 5px rgba(200,200,200,.8)
+  }
+
+  @media screen and (max-width: $mobile-break) {
+    height: 300px;
+    h1 {
+      width: 300px;
+    }
+  }
 }
 
 label {
@@ -56,6 +63,21 @@ input, textarea {
   cursor: pointer;
   min-height: 50px;
   min-width: 50px;
+  @media screen and (max-width: $mobile-break) {
+    display: none;
+    min-width: 0px;
+  }
+}
+
+.back {
+  margin-left: $standard-spacing;
+
+   @media screen and (max-width: $mobile-break) {
+    position: absolute;
+    bottom: $standard-spacing;
+    left: 0px;
+    width: calc(100% - 44px);
+   }
 }
 
 .comment {
@@ -71,6 +93,12 @@ input, textarea {
   padding: $standard-spacing;
   flex: 3;
   margin-right: $standard-spacing;
+
+  @media screen and (max-width: $mobile-break) {
+    margin-right: 0px;
+    flex: 1;
+    width: 100%;
+  }
 }
 
 .comments {
@@ -89,6 +117,9 @@ input, textarea {
   p {
     text-align: left;
   }
+  @media screen and (max-width: $mobile-break) {
+      @include flex-options(column, center, center);
+  }
 }
 
 .full-comments {
@@ -104,6 +135,9 @@ input, textarea {
 .full-details {
   @include flex-options(row, space-between, center);
   width: 100%;
+   @media screen and (max-width: $mobile-break) {
+    display: block
+   }
 }
 
 .full-message {
@@ -118,18 +152,11 @@ input, textarea {
   }
 }
 
-.loading {
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-  border: 10px solid $primary-color;
-  border-top: 10px solid $accent-color;
-  -webkit-animation: load 2s linear infinite;
-  animation: load 2s linear infinite;
-}
-
-.loading-container {
-  @include flex-options(row, center, center);
+.fullPost-details {
+  @include flex-options(row, flex-start, flex-start);
+   @media screen and (max-width: $mobile-break) {
+    display: block;
+   }
 }
 
 .main {
@@ -140,6 +167,13 @@ input, textarea {
   min-height: calc(100vh - 60px);
   margin: $standard-spacing;
   padding: 2px;
+
+  @media screen and (max-width: $mobile-break) {
+    position: absolute;
+    top: 0;
+  }
+
+
 }
 
 .new-post {
@@ -149,11 +183,15 @@ input, textarea {
 
 .new-comment {
   @include flex-options(row, space-between, center);
+   @media screen and (max-width: $mobile-break) {
+    @include flex-options(column, center, center)
+   }
+
 }
 
 .post {
   @extend .new-comment;
-  margin: 5px 10px;
+  margin: 10px $standard-spacing;
   padding: 0px 10px;
   border: $border;
   // width: 100%;
@@ -162,14 +200,29 @@ input, textarea {
 .poster-and-comments {
   @include flex-options(row, flex-start, center);
   width: 50%;
-
   p {
     padding-right: $standard-spacing;
   }
+   @media screen and (max-width: $mobile-break) {
+      width: 100%;
+      @include flex-options(row, space-between, center);
+
+      p {
+        padding-right: 0px;
+      }
+   }
 }
 
 .post-content {
   width: 90%;
+
+  h2{
+    overflow: none;
+  }
+
+  @media screen and (max-width: $mobile-break) {
+    width: 100%;
+  }
 }
 
 .post-details {
@@ -179,14 +232,22 @@ input, textarea {
 .post-btn-container {
   @include flex-options(row, flex-end, center);
   height: 200px;
-}
-
-.post-btn-container {
   padding-right: 10px;
+
+  @media screen and (max-width: $mobile-break) {
+    @include flex-options(row, center, center);
+    padding-right: 0px;
+  }
 }
 
 .post-container {
   margin-top: 50px;
+}
+
+.post-update {
+  @media screen and (max-width: $mobile-break) {
+    display: none;
+  }
 }
 
 .title-user {
@@ -195,10 +256,18 @@ input, textarea {
   h1, h2 {
     margin: 5px;
   }
+
+   @media screen and (max-width: $mobile-break) {
+    width: 100%;
+   }
 }
 
 #cancel {
   margin-right: $standard-spacing;
+
+   @media screen and (max-width: $mobile-break) {
+      margin-right: 30px;
+   }
 }
 
 #message-input, #comment-input{
@@ -208,5 +277,13 @@ input, textarea {
 #reply-btn {
   width: 200px;
   margin-right: $standard-spacing;
+
+  @media screen and (max-width: $mobile-break) {
+    margin-right: 0px;
+    width: 100%;
+    margin-bottom: 80px;
+    border-bottom: $border;
+  }
 }
+
 

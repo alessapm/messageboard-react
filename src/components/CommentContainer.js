@@ -10,7 +10,7 @@ export default class CommentContainer extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-  if(this.props != newProps) {
+  if(this.props !== newProps) {
     this.setState({
       newComments: newProps.comments
     });
@@ -18,6 +18,7 @@ export default class CommentContainer extends Component {
 }
 
   render(){
+
     const comments = this.state.newComments
       ? this.state.newComments.map((comment, index) => {
         return (
@@ -30,10 +31,20 @@ export default class CommentContainer extends Component {
           <Comment comment={comment} key={index} />
         )
       })
-       return(
-        <div>
-          {comments}
-        </div>
-      )
+
+      if (this.props.comments.length > 0){
+         return(
+          <div>
+            {comments}
+          </div>
+        )
+       } else {
+        return (
+          <div>
+            There are currently no replies... Add one!
+          </div>
+        )
+       }
+
   }
 }

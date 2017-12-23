@@ -33,7 +33,8 @@ handleChange(event){
     this.setState({index: this.props.index}, () => {
       localStorage.setItem('newComment', JSON.stringify(this.state));
       this.props.newComment();
-      // this.props.updateComponent();
+      document.getElementById("comment-input").value = '';
+      document.getElementById("comment-user").value = '';
     })
   }
 
@@ -51,6 +52,7 @@ render(){
           <br /><br />
           <label>Reply User: </label><br/>
           <input name="comment_user"
+          id="comment-user"
           onChange={this.handleChange.bind(this)}
           type='text'
           />

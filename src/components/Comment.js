@@ -9,7 +9,7 @@ render(){
   const comment = this.props.comment;
     return(
       <div className="comment">
-        <h4>{comment.comment_user}</h4>
+        <h4>{comment.comment_user}:</h4>
         <p>{comment.comment_msg}</p>
       </div>
     )

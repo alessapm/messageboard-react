@@ -4,19 +4,7 @@ import CommentContainer from './CommentContainer';
 import NewComment from './NewComment';
 
 export default class PostContainer extends Component {
-  // constructor(props){
-  //   super(props);
 
-  //   this.state = {
-  //     update: false
-  //   }
-  // }
-
-  // updateComponent(){
-  //   let currentStatus = this.state.update;
-  //   this.setState({update: !currentStatus})
-  //   console.log('inside updateComponent')
-  // }
 
   render(){
     const posts = this.props.posts.map((post, index) => {
@@ -34,10 +22,13 @@ export default class PostContainer extends Component {
             <div className="full-details">
               <div className="title-user">
                 <h1>{fullPostActive.title}</h1>
-                <h2>By: {fullPostActive.user} On {fullPostActive.date}</h2>
+                <div className="fullPost-details">
+                  <h2>By: {fullPostActive.user}</h2>
+                  <h2> On {fullPostActive.date}</h2>
+                </div>
               </div>
-              <button onClick={() => {this.props.showFullPost()}}>
-                Back to posts
+              <button className="back" onClick={() => {this.props.showFullPost()}}>
+                Back to Posts
               </button>
             </div>
             <div className="full-message">
