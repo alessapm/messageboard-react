@@ -30,18 +30,11 @@ export default class CommentContainer extends Component {
           <Comment comment={comment} key={index} />
         )
       })
-    if (this.props.commentsUpdated){
-      return (
-        <div className="loading-container">
-          <div className="loading"></div>
-        </div>
-      )
-    } else {
        return(
         <div>
           {comments}
         </div>
       )
-    }
+
   }
 }
