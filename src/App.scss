@@ -12,6 +12,11 @@ $standard-spacing: 20px;
   align-items: $align;
 }
 
+@keyframes load {
+    0% {transform:rotateZ(-360deg);}
+}
+
+
 * {
   outline: none;
 }
@@ -49,8 +54,9 @@ input, textarea {
 
 .arrow {
   cursor: pointer;
+  min-height: 50px;
+  min-width: 50px;
 }
-
 
 .comment {
   margin: $standard-spacing;
@@ -109,6 +115,20 @@ input, textarea {
   p {
     text-align: left;
   }
+}
+
+.loading {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 10px solid $primary-color;
+  border-top: 10px solid $accent-color;
+  -webkit-animation: load 2s linear infinite;
+  animation: load 2s linear infinite;
+}
+
+.loading-container {
+  @include flex-options(row, center, center);
 }
 
 .main {

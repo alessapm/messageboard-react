@@ -1,3 +1,6 @@
+@keyframes load {
+  0% {
+    transform: rotateZ(-360deg); } }
 * {
   outline: none; }
 
@@ -32,7 +35,9 @@ input, textarea {
   padding-left: 5px; }
 
 .arrow {
-  cursor: pointer; }
+  cursor: pointer;
+  min-height: 50px;
+  min-width: 50px; }
 
 .comment {
   margin: 20px;
@@ -85,6 +90,21 @@ input, textarea {
   padding: 20px; }
   .full-post p {
     text-align: left; }
+
+.loading {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  border: 10px solid #0B2A76;
+  border-top: 10px solid #A2B19C;
+  -webkit-animation: load 2s ease-in infinite;
+  animation: load 2s ease-in infinite; }
+
+.loading-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
 
 .main {
   text-align: center;

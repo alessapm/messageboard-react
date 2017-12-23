@@ -6,6 +6,16 @@ import NewComment from './NewComment';
 export default class PostContainer extends Component {
   // constructor(props){
   //   super(props);
+
+  //   this.state = {
+  //     update: false
+  //   }
+  // }
+
+  // updateComponent(){
+  //   let currentStatus = this.state.update;
+  //   this.setState({update: !currentStatus})
+  //   console.log('inside updateComponent')
   // }
 
   render(){
@@ -36,8 +46,14 @@ export default class PostContainer extends Component {
           </div>
           <div className="full-comments">
             <h3>Responses</h3>
-            <CommentContainer comments={fullPostActive.comments} newComment={this.props.newComment}/>
-            <NewComment newComment={this.props.newComment} index={this.props.fullPostActive.index}/>
+            <CommentContainer
+            comments={fullPostActive.comments}
+            newComment={this.props.newComment}
+            commentsUpdated={this.props.commentsUpdated}
+            />
+            <NewComment
+            newComment={this.props.newComment}
+            index={this.props.fullPostActive.index}/>
           </div>
         </div>
       )

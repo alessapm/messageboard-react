@@ -33,7 +33,8 @@ export default class Main extends Component {
         }
       ],
       isNewPostActive: false,
-      fullPostActive: false
+      fullPostActive: false,
+      commentsUpdated: false
     }
   }
 
@@ -67,15 +68,21 @@ newComment(){
   let index = getLocal.index;
   let comment = getLocal.comment;
 
-  let stateCopy = [ ... this.state.posts];
+  let stateCopy = [ ...this.state.posts];
 
-  let isolatedPostComments = stateCopy[index].comments
-  let addComment = isolatedPostComments.push(comment)
+  let isolatedPostComments = stateCopy[index].comments;
+  let addComment = isolatedPostComments.push(comment);
 
   // console.log('iso: ', isolatedPostComments);
   stateCopy[index].comments = isolatedPostComments;
-  // console.log('stateCopy: ', stateCopy)
-  this.setState({posts: stateCopy})
+  console.log('stateCopy[index]: ', stateCopy[index])
+
+  let newFullPost = {index: index, post: stateCopy[index]}
+  this.setState({posts: stateCopy,
+                commentsUpdated: true,
+                fullPostActive: newFullPost
+                })
+  window.setTimeout(() => this.setState({commentsUpdated: false}), 1000)
 }
 
 
@@ -84,7 +91,12 @@ newComment(){
       return(
         <div className="main">
           <div className="main-container">
-            <PostContainer posts={this.state.posts} fullPostActive={this.state.fullPostActive} showFullPost={this.showFullPost.bind(this)} newComment={this.newComment.bind(this)}/>
+            <PostContainer posts={this.state.posts}
+            fullPostActive={this.state.fullPostActive}
+            showFullPost={this.showFullPost.bind(this)}
+            newComment={this.newComment.bind(this)}
+            commentsUpdated={this.state.commentsUpdated}
+            />
           </div>
         </div>
       )

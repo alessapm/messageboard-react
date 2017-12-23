@@ -33,6 +33,7 @@ handleChange(event){
     this.setState({index: this.props.index}, () => {
       localStorage.setItem('newComment', JSON.stringify(this.state));
       this.props.newComment();
+      // this.props.updateComponent();
     })
   }
 
