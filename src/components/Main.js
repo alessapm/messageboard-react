@@ -45,6 +45,8 @@ createPost(){
 
   this.setState({
     isNewPostActive: false
+  }, () => {
+    this.showFullPost()
   })
 }
 
@@ -65,7 +67,8 @@ showFullPost(){
 
 newComment(){
   let getLocal = JSON.parse(localStorage.getItem('newComment'));
-  let index = getLocal.index;
+  let index = getLocal.index ? getLocal.index : this.state.posts.length - 1;
+  console.log('index: ', index)
   let comment = getLocal.comment;
 
   let stateCopy = [ ...this.state.posts];

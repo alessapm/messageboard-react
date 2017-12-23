@@ -51,9 +51,11 @@ export default class NewPost extends Component {
 
     this.setState(newState, () => {
        localStorage.setItem('newPost', JSON.stringify(this.state));
+       localStorage.setItem('activePost', JSON.stringify(this.state));
       this.props.createPost()
     });
   }
+
 
   render(){
     return(

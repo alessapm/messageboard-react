@@ -35,6 +35,5 @@ export default class CommentContainer extends Component {
           {comments}
         </div>
       )
-
   }
 }

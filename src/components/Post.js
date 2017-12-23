@@ -34,7 +34,7 @@ export default class Post extends Component {
             <div className="post-details">
               <div className="poster-and-comments">
                 <p>Posted by: {post.user} </p>
-                <p className="comments">{post.comments.length} comments</p>
+                <p className="comments" onClick={() => this.activateFullPost()}>{post.comments.length} comments</p>
               </div>
               <div className="post-update">
                 <p>Last Update: {post.date}</p>
