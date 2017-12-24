@@ -7,6 +7,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). 'create-react-app' is an npm package and React/webpack starter kit. It includes Webpack and Babel configuration. It also includes Autoprefixer, ESLint and Jest. See documentation for details. 
 
 ## Set up
+Git clone this repository on your local machine. 
 
 After you have downloaded the app, run 'npm install' to retrieve dependencies. Next, to start up the application in your terminal, enter 'npm start'.
 
