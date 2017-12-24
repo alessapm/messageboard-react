@@ -10,28 +10,7 @@ export default class Main extends Component {
     super();
 
     this.state = {
-      posts: [{
-          title: 'First Post',
-          message: 'this is my first post. This is what a post looks like. ',
-          user: 'User101',
-          date: '12/21/17 @ 8:11am',
-          comments: [{
-            comment_user: 'am111',
-            comment_msg: 'this is a comment. I disagree!'
-          },
-          {
-            comment_user: 'DD431',
-            comment_msg: 'this is an ANGRY comment. I disagree! Because Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique nulla quia tenetur, culpa ducimus cumque vel quidem, deserunt mollitia odit facere, sed quaerat inventore saepe perferendis. Velit quo nesciunt consectetur.'
-          }]
-        },
-        {
-          title: 'Second Post has a really long post title that is this',
-          message: 'this is my SECOND post. This is sto;;;; still what a post looks like. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo ipsum magni veniam minus autem dicta totam praesentium rem ullam! Delectus veniam repellat numquam rerum id quod, quisquam, illo quas exercitationem? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias odit consequatur at pariatur eius deserunt amet adipisci, quibusdam expedita, autem velit repellat doloremque ut consectetur sed officiis, debitis dicta ea!',
-          user: 'User122',
-          date: '12/21/17 @ 9:11am',
-          comments: []
-        }
-      ],
+      posts: [],
       isNewPostActive: false,
       fullPostActive: false,
       commentsUpdated: false
